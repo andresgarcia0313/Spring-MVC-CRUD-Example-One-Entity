@@ -1,25 +1,38 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
-    <title>Items List</title>
+    <title>Lista De Elementos</title> <!-- Título de la página -->
 </head>
 <body>
-    <h1>Items List</h1>
-    <a href="/items/new">Add New Item</a>
+    <h1>Lista De Elementos</h1> <!-- Encabezado de la página -->
+    
+    <!-- Enlace para añadir un nuevo item -->
+    <a href="/items/new">Agregar nuevo item</a>
+    
+    <!-- Tabla para mostrar la lista de items -->
     <table>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Actions</th>
+            <!-- Encabezados de las columnas de la tabla -->
+            <th>Identificador</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
         </tr>
+        
+        <!-- Fila de la tabla para cada item -->
+        <!-- th:each es un atributo de Thymeleaf que itera sobre la lista de items y genera una fila por cada item -->
         <tr th:each="item : ${items}">
+            <!-- Muestra el ID del item -->
             <td th:text="${item.id}"></td>
+            <!-- Muestra el nombre del item -->
             <td th:text="${item.name}"></td>
+            <!-- Muestra la descripción del item -->
             <td th:text="${item.description}"></td>
             <td>
-                <a th:href="@{/items/edit/{id}(id=${item.id})}">Edit</a>
-                <a th:href="@{/items/delete/{id}(id=${item.id})}">Delete</a>
+                <!-- Enlace para editar el item -->
+                <a th:href="@{/items/edit/{id}(id=${item.id})}">Editar</a>
+                <!-- Enlace para eliminar el item -->
+                <a th:href="@{/items/delete/{id}(id=${item.id})}">Eliminar</a>
             </td>
         </tr>
     </table>

@@ -1,19 +1,30 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
-    <title>Item Form</title>
+    <title>Ítem</title> <!-- Título de la página -->
 </head>
 <body>
-    <h1>Item Form</h1>
+    <h1>Ítem</h1> <!-- Título principal de la página -->
+
+    <!-- Formulario para crear o editar un item -->
     <form th:action="@{/items}" th:object="${item}" method="post">
+        <!-- Campo oculto para el ID del item, utilizado al editar un item -->
         <input type="hidden" th:field="*{id}" />
-        <label for="name">Name:</label>
+        
+        <!-- Campo de entrada para el nombre del item -->
+        <label for="name">Nombre:</label>
+        <br />
         <input type="text" th:field="*{name}" id="name" required />
         <br />
-        <label for="description">Description:</label>
+        
+        <!-- Campo de entrada para la descripción del item -->
+        <label for="description">Descripción:</label>
+        <br />
         <textarea th:field="*{description}" id="description"></textarea>
         <br />
-        <button type="submit">Save</button>
+        
+        <!-- Botón de envío para guardar el item -->
+        <button type="submit">Guardar</button>
     </form>
 </body>
 </html>
