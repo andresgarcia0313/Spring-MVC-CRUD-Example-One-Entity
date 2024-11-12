@@ -90,7 +90,7 @@ public class ItemController {
             itemRepository
                 .findById(id)
                 .orElseThrow(
-                        () -> new IllegalArgumentException("Invalid item ID")
+                        () -> new IllegalArgumentException("ID de artículo no válido")
                     )
         );
         // Retorna la vista para editar el item
