@@ -1,11 +1,13 @@
-./gradlew clean
-./gradlew build --refresh-dependencies
-./gradlew dependencies
-./gradlew build
-./gradlew test
+./gradlew clean && ./gradlew build && ./gradlew bootRun 
+
+
+./gradlew clean && ./gradlew build && ./gradlew test
 ./gradlew bootRun
 
-
-java -jar build/libs/nombre-del-archivo.jar
+java -jar build/libs/software-0.0.1-SNAPSHOT.jar
 
 ./gradlew tasks
+
+
+
+
